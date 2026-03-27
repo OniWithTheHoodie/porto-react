@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* 
+
+-- MOBILE --
+
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+p  { font-size: 16px; } 
+
+-- TABLET --
+
+@media (min-width: 768px) {
+  h1 { font-size: 40px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
+  p  { font-size: 18px; }
+} 
+
+-- Desktop --
+
+@media (min-width: 1024px) {
+  h1 { font-size: 56px; }
+  h2 { font-size: 40px; }
+  h3 { font-size: 30px; }
+  p  { font-size: 20px; }
+}
+
+-- MOBILE - line height -- 
+1.5 - 1.6
+
+-- TABLET - line height --
+1.6
+
+-- DESKTOP - line height --
+1.65 - 1.7 
+
+-- COLORS -- 
+
+primary: #BFC9D1
+secondary: #EAEFEF
+text color: #25343F;
+interactions: #FF9B51 */
+
+h1,
+h2,
+h3,
+a,
+span {
+  font-family: "Sedgwick Ave Display", sans-serif;
+}
+
+p,
+label{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+span {
+  font-size: 3.2em;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* CAROUSEL */
+@layer utilities {
+  .slides-custom::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  .slides-custom::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 10px;
+  }
+  .slides-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .slide {
+    @apply snap-start shrink-0;
+    @apply mr-[30px];
+    @apply origin-center scale-100;
+    @apply transition-transform duration-500;
+    @apply relative flex justify-center items-center;
+  }
+}
+
+@layer components {
+  .slider {
+    @apply inline-flex;
+    @apply w-[1.5rem];
+    @apply h-[1.5rem];
+    @apply bg-white no-underline;
+    @apply relative items-center justify-center;
+    @apply rounded-full;
+    @apply m-[0_0.5rem_0.5rem_0];
+    @apply p-1;
+  }
+}
+
+@layer components {
+  .form-custom {
+    @apply border; 
+    @apply border-[#25343F] rounded-lg;
+  }
+}
+
+
+
+@font-face {
+  font-family: "Sedgwick Ave Display";
+  src: url("/fonts/SedgwickAveDisplay-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto_SemiCondensed-Regular.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 200;
+  font-style: normal;
+}
