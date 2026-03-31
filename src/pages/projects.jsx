@@ -13,7 +13,7 @@ function projects() {
 
                     <div className="flex overflow-x-auto snap-x scroll-smooth [-webkit-overflow-scrolling:touch] slides-custom">
                         <div id="slide-1" className="flex flex-col slide">
-<a href="/projects/leapforce" className="relative block group overflow-hidden max-w-72">
+<a href="https://leapforce-cta-section-two-blocks.vercel.app/" className="relative block group overflow-hidden max-w-72">
 
   <img
     className="transition-transform duration-300 group-hover:scale-110"
