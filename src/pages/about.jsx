@@ -1,14 +1,20 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 function About() {
     const [showMore, setShowMore] = useState(false);
+    const aboutRef = useRef(null);
 
     function HandleMoreClick() {
-        setShowMore(!showMore);
+        setShowMore(prev => !prev);
+
+        requestAnimationFrame(() => {
+            aboutRef.current?.scrollIntoView({ block : "start"});
+        });
     }
+
     return(
         <>
-            <article id="about-me" className="bg-[#EAEFEF] p-2 space-y-4 text text-[#25343F] leading-[1.6] p-[1em]">
+            <article ref={aboutRef} id="about-me" className="bg-[#EAEFEF] p-2 space-y-4 text-[#25343F] leading-[1.6] p-[1em] scroll-mt-20">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="pb-1 text-2xl">About me</h2>
                     <p>My name is Lesley Reynolds. I studied for two years at the Amsterdam University of Applied Sciences, where I earned my Front-End Associate Degree.</p>
@@ -22,9 +28,9 @@ function About() {
                         Feel free to take a look at my work and don’t hesitate to contact me.</p> 
                         </div>
                     )}
-                    <button className="font-bold
+                    <button className="font-bold 
     " onClick={HandleMoreClick}>
-                        {showMore ? 'Hide' : 'Show more'} text ▼
+                        {showMore ? 'Hide text ▲' : 'Show more text ▼'} 
                         </button> 
                 </div>
             </article>

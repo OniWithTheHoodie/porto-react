@@ -24,7 +24,7 @@ function form() {
         <div className="flex flex-col">
           <label htmlFor="phone" className="mb-1">
             Phone Number:
-            <small className="block text-sm text-gray-500">Format: 06-12345678 or 020-1234567</small>
+            <small className="block text-sm text-gray-500">Format: 0612345678 or 0201234567</small>
           </label>
           <input className="form-custom p-2" type="tel" id="phone" name="phone" pattern="[0-9]{10}" />
         </div>
