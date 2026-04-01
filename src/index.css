@@ -92,6 +92,7 @@ button {
     @apply origin-center scale-100;
     @apply transition-transform duration-500;
     @apply relative flex justify-center items-center;
+    @apply scroll-mt-[0];
   }
 }
 
